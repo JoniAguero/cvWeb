@@ -48,6 +48,7 @@ header {
 }
 .header-nombre > h1 {
 	margin-top: 5px;
+	padding-bottom: 5px;
 	font-size: 1.8em;
 	vertical-align: middle;
 	text-align: center;
