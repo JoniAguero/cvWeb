@@ -1,0 +1,142 @@
+#antenna {
+  margin-top: 20px; 
+}
+
+#ball {
+  margin: 0 auto -2px auto;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  border: 2px solid;
+  background-color: #dbdbdb;
+}
+
+#stem {
+  margin: 0 auto;
+  height: 80px;
+  width: 15px;
+  border: 2px solid #000;
+  background-color: #a8a8a8;
+}
+
+#base {
+  margin: 0 auto;
+  height: 20px;
+  width: 80px;    
+  border: 2px solid;
+  background-color: #dbdbdb;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+}
+
+#head {
+  margin: auto;
+  height: 480px;
+  width: 300px;
+  background-color: #a8a8a8;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px; 
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  border: 2px solid #000;
+}
+
+#eyepieceborder {
+  
+}
+
+#eyepiece { 
+  margin-left: -20px;
+  margin-top: 140px;
+  position: absolute;
+  width: 340px;
+  height: 140px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  background-color: #000;
+  box-shadow: 0px 0px 0px 10px #a8a8a8 inset;
+}
+
+.eye {
+  margin: 10px auto 0px auto;
+  height: 110px;
+  width: 120px;
+  background-color: #ffffc6;
+  border-radius: 50%;
+}
+
+.lid {
+  height: 10px;
+  background-color: #000;
+  border-bottom: 30px solid #000;
+  border-left: 30px solid #000;
+}
+
+.eyeball {
+  margin: 15px auto 0px auto;
+  height: 20px;
+  width: 20px;
+  background-color: #000;
+}
+
+#mouthpiece {
+  margin-left: 20px;
+  margin-top: 330px;
+  position: absolute;
+  width: 250px;
+  height: 115px;
+  border-radius: 25px;
+  background-color: #ffffc6;
+  border: 3px solid #000;
+}
+
+.row {
+  margin: 0px;
+}
+.col-2 {
+  height: 37px;
+  border: 2px solid #000;
+}
+
+.no-border1 {
+  border-left: none;
+  border-top: none;
+}
+
+.no-border2 {
+  border-right: none;
+  border-top: none;
+}
+
+.no-border3 {
+  border-left: none;
+  border-bottom: none;
+}
+
+.no-border4 {
+  border-right: none;
+  border-bottom: none;
+}
+
+.no-left {
+  border-left: none;
+}
+
+.no-right {
+  border-right: none;
+}
+
+.no-top {
+  border-top: none;
+}
+
+no-bottom {
+border-bottom: none;
+}
+.espacio-dibujo-top{
+  margin-top: 160px;
+}
+.espacio-dibujo-bottom{
+  margin-bottom: 30px;
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="cvApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Jonathan Agüero: Desarrollador Full-Stack. Apasionado por el Internet y la nueva tendencia Mobile First, Responsive Design y Diseño UX.">
+	<meta name="author" content="Jonathan Agüero">
+	<meta name="owner" content="Jonathan Agüero">
+	<meta name="robots" content="index, follow">
+
+	<!-- ************************************************* Normalize y Modernizr  **********************************************-->
+	<link rel="stylesheet" href="css/normalize.css">
+	<script src="js/modernizr-custom.js"></script>
+
+	<!-- ************************************************* CSS **********************************************-->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Alef|Carrois+Gothic|Encode+Sans+Semi+Condensed|Rock+Salt" rel="stylesheet">
+	<link rel="stylesheet" href="icomoon/style.css">
+	<link rel="stylesheet" href="css/design.css">
+	<link rel="stylesheet" href="css/paint.css">
+	<link rel="stylesheet" href="css/particles.css">
+ 
+	<!-- ************************************************* JS **********************************************-->
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="js/angular/angular-animate.min.js"></script>
+	<script src="app.js"></script>
+	<script src="js/smooth-scroll.min.js"></script>
+
+	<!-- ********************************************* SCRIPT DE SCROLL (MODIFICADO A SOBRE MI) ********************************************* -->
+	<script>
+		var scroll = new SmoothScroll('a[href="#aboutme"]', {
+			// Selectors
+			ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+			header: null, // Selector for fixed headers (must be a valid CSS selector)
+
+			// Speed & Easing
+			speed: 2000, // Integer. How fast to complete the scroll in milliseconds
+			offset: -500, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+			easing: 'easeInCubic' // Easing pattern to use
+		});
+	</script>
+
+	<script>
+		var scroll = new SmoothScroll('a[href*="#"]', {
+			// Selectors
+			ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+			header: null, // Selector for fixed headers (must be a valid CSS selector)
+
+			// Speed & Easing
+			speed: 2000, // Integer. How fast to complete the scroll in milliseconds
+			offset: -10, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+			easing: 'easeInCubic' // Easing pattern to use
+		});
+	</script>
+
+	<title>Jonathan Agüero</title>
+</head>
+
+<!-- ******************************* MENU DESPLEGABLE ****************************************** -->
+
+<body data-ng-controller="appCtrl">
+
+	<header>
+		<div class="header" data-ng-click="desplegarMenu()">
+			<div class="header-logo">
+			</div>
+			<div class="header-nombre">
+				<h1>Jonathan Agüero</h1>
+				<h2>Full-Stack Developer</h2>
+			</div>
+		</div>
+	</header>
+
+	<nav data-ng-show="menuActive">
+		<div class="menu-nav">
+			<div class="menu-nav-logo"></div>
+			<ul>
+				<li><a data-scroll href="#aboutme">Sobre mí</a></li>
+				<li><a data-scroll href="#habpersonales">Habilidades Técnicas</a></li>
+				<li><a data-scroll href="#portafolio">Portafolio</a></li>
+				<li><a href="" data-ng-click="desplegarContacto()">Contáctame</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="principal">
+		
+			<!-- ******************************************** CUBO ******************************************* -->
+		
+		<div id="particles-js"></div>
+		<section id="section-home">
+			<div class="contenedor">
+				<div class="cubo">
+					<div id="aboutme" class="cara">
+						<a data-scroll href="#aboutme">SOBRE MÍ</a>
+					</div>
+					<div id="skills" class="cara">
+						<a data-scroll href="#habpersonales" style="top: 10%">HABILIDADES TÉCNICAS</a>
+					</div>
+					<div id="portfolio" class="cara">
+						<a data-scroll href="#portafolio">PORTAFOLIO</a>
+					</div>
+					<div id="contact" class="cara">
+						<a href="" data-ng-click="desplegarContacto()">CONTÁCTAME</a>
+					</div>
+					<div class="cara"></div>
+					<div class="cara"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ************************************************ DIBUJO ******************************************************* -->
+		<div class="espacio-dibujo-top"></div>
+		<div>
+		  <div id="antenna">
+		    <div id="ball"></div>
+		    <div id="stem"></div>
+		    <div id="base"></div>
+		  </div>
+		  <div id="head">
+		    <div id="eyepieceborder">
+		      <div id="eyepiece">
+		        <div class="row">
+		          <div class="eye">
+		            <div class="lid"></div>
+		            <div class="eyeball"></div>
+		          </div>
+		          <div class="eye">
+		            <div class="lid"></div>
+		            <div class="eyeball"></div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <div id="mouthpiece">
+		      <div class="row">
+		        <div class="col-2 no-border1"></div>
+		        <div class="col-2 no-top"></div>
+		        <div class="col-2 no-top"></div>
+		        <div class="col-2 no-top"></div>
+		        <div class="col-2 no-top"></div>
+		        <div class="col-2 no-border2"></div>
+		      </div>
+		      <div class="row">
+		        <div class="col-2 no-left"></div>
+		        <div class="col-2"></div>
+		        <div class="col-2"></div>
+		        <div class="col-2"></div>
+		        <div class="col-2"></div>
+		        <div class="col-2 no-right"></div>
+		      </div>
+		      <div class="row">
+		        <div class="col-2 no-border3"></div>
+		        <div class="col-2 no-bottom"></div>
+		        <div class="col-2 no-bottom"></div>
+		        <div class="col-2 no-bottom"></div>
+		        <div class="col-2 no-bottom"></div>
+		        <div class="col-2 no-border4"></div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="espacio-dibujo-bottom"></div>
+		
+	</section>
+
+	
+	<!-- ************************************************ SECCIÓN SOBRE MI ********************************************* -->
+ 
+	<section class="info">
+		<div class="content-info content-info-about-me">
+			<div class="info-about-me"> 
+				<h3 id="aboutme">Sobre Mí</h3>
+			</div>
+
+			<div class="menunav-info">
+				<div class="nav-presentacion" data-ng-click="mostrarContenidoSobreMi('presentacion')" ng-class="cPresentacion">
+					<p><strong>¿Quién soy?</strong></p>
+				</div>
+				<div class="nav-cualidades" data-ng-click="mostrarContenidoSobreMi('cualidades')" ng-class="cCualidades">
+					<p><strong>Mis cualidades</strong></p>
+				</div>
+				<div class="nav-hobbies" data-ng-click="mostrarContenidoSobreMi('hobbies')" ng-class="cHobbies">
+					<p><strong>¡Hobbies!</strong></p>
+				</div>
+			</div>
+			
+			<!-- ******** ESTE CONTENIDO SOLO SE VISUALIZARA SI EL WIDTH DE LA PANTALLA ES MENOR A 575 ******** -->
+
+			<div screen-size>
+				<div ng-if="width <= 575">
+					<div class="arrowup">
+						<a data-scroll href="#section-home"><div class="arrow-up"></div></a>
+					</div>	
+					<div class="contenido-info" data-ng-include="seccionContenido"></div>
+					<div class="arrowdown">
+						<a data-scroll href="#habpersonales"><div class="arrow-down"></div></a>	
+					</div>
+				</div>
+			</div>
+			
+		
+			<!-- ******** ESTE CONTENIDO SOLO SE VISUALIZARA SI EL WIDTH DE LA PANTALLA ES MAYOR A 575 ******** -->
+
+			<div screen-size>
+				<div data-ng-if="width > 575">
+					<div  class="contenido-info">
+						<div class="arrowup">
+							<a data-scroll href="#section-home"><div class="arrow-up"></div></a>
+						</div>
+						<div class="presentacion">
+							<div class="imagen-presentacion"></div>
+							<div class="contenido-info-presentacion">
+								<p>¡Hola! Soy <strong>Jonathan Agüero</strong>, y en este especie de Currículum en breves renglones, te contaré un poco acerca de mí.</p>
+								<p>Soy un joven que encontró su pasión por el <strong>Internet</strong> desde temprana edad. Entusiasta por la tendencia de programación orientada a la aplicación de los conceptos <strong><a target="_blank" href="https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/">Mobile First</a></strong>, <strong><a target="_blank" href="https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable">Responsive Design</a></strong> y <strong><a target="_blank" href="https://pmqlinkedin.wordpress.com/about/que-es-el-diseno-ux/">Diseño UX</a></strong>, voy perfilando mí profesión hacia estas modas.<br></p>
+								<p class="pruebadise" style="font-style: italic;"><b><br>¡Puedes probar el diseño de este Currículum desde diferentes dispositivos para ver la magia de la que hablo!</b></p>
+								<p> Interesado por el mundo de las Startup, me encuentro capacitandome constantemente en las últimas tecnologías del mercado, tales como <a target="_blank" href="https://angularjs.org/">AngularJS</a>, <a target="_blank" href="https://angular.io/">Angular2 y 4</a>, <a target="_blank" href="http://ionic.io/2">Ionic2</a>, <a target="_blank" href="https://ionicframework.com/">Ionic3</a>. Para el desarrollo Back-End mis preferidas son <a target="_blank" href="https://www.javascript.com/">JavaScript</a>, <a target="_blank" href="https://www.python.org/">Python</a> y <a target="_blank" href="https://www.ruby-lang.org/es/">Ruby</a>.</p> 
+								
+							</div>
+						</div>
+						<div class="cualidades-hobbies">
+							
+							<div class="cualidades">
+								<div class="tittle">
+									<p>CUALIDADES</p>
+								</div>
+								<div class="info-cualidades">
+									<div class="cualidad">
+										<div class="img-c img-c1"></div>
+										<p style="margin-right: 5px;"><strong>COMUNICACIÓN EFECTIVA</strong></p>
+									</div>
+									<div class="cualidad">
+										<div class="img-c img-c2"></div>
+										<p><strong>CREATIVIDAD</strong></p>
+									</div>
+									<div class="cualidad">
+										<div class="img-c img-c3"></div>
+										<p><strong>GEEK</strong></p>
+									</div>
+
+									<div class="cualidad">
+										<div class="img-c img-c4"></div>
+										<p><strong>PERSEVERANCIA</strong></p>
+									</div>
+									<div class="cualidad">
+										<div class="img-c img-c5"></div>
+										<p><strong>PROACTIVIDAD</strong></p>
+									</div>
+								</div>
+							</div>
+					
+							<div class="hobbies">
+								<div class="tittle">
+									<p>HOBBIES</p>
+								</div>
+								<div class="info-hobbies">
+									<div class="hobbie hb1">
+										<div class="hobbie-img img-hb1"><p><strong>DJ</strong></p></div>
+									</div>
+									<div class="hobbie hb2">
+										<div class="hobbie-img img-hb2"><p><strong>LEER</strong></p></div>
+									</div>
+									<div class="hobbie hb3">
+										<div class="hobbie-img img-hb3"><p><strong>CINE</strong></p></div>
+									</div>
+									<div class="hobbie hb4">
+										<div class="hobbie-img img-hb4"><p><strong>CÓDIGO</strong></p></div>
+									</div>
+									<div class="hobbie hb6">
+										<div class="hobbie-img img-hb6"><p><strong>INTERNET</strong></p></div>
+									</div>
+									<div class="hobbie hb5">
+										<div class="hobbie-img img-hb5"><p><strong>FÚTBOL</strong></p></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrowdown">
+							<a data-scroll href="#habpersonales"><div class="arrow-down"></div></a>	
+						</div>
+					</div>
+				</div>
+			</div>
+
+	</section>
+
+	<!-- ************************************************ SECCIÓN HABILIDADES PERSONALES ********************************************* -->
+
+	<section class="info">
+		<div class="content-info content-info-hab-personales">
+			<div class="info-hab-personales"> 
+				<h3 id="habpersonales">Hab. Técnicas</h3>
+			</div>
+
+			<div class="menunav-info">
+				<div class="nav-backend" data-ng-click="mostrarContenidoHabTecnicas('backend')" ng-class="cBack">
+					<p><strong>Back-End</strong></p>
+				</div>
+				<div class="nav-frontend" data-ng-click="mostrarContenidoHabTecnicas('frontend')" ng-class="cFront">
+					<p><strong>Front-End</strong></p>
+				</div>
+				<div class="nav-cursos" data-ng-click="mostrarContenidoHabTecnicas('conocimientos')" ng-class="cConocimientos">
+					<p><strong>Conocimientos</strong></p>
+				</div>
+			</div>
+
+			<!-- ******** ESTE CONTENIDO SOLO SE VISUALIZARA SI EL WIDTH DE LA PANTALLA ES MENOR A 575 ******** -->
+
+			<div screen-size>
+				<div ng-if="width <= 575">
+					<div class="arrowup">
+						<a data-scroll href="#aboutme"><div class="arrow-up"></div></a>
+					</div>
+					<div class="contenido-info" data-ng-include="seccionHabTecnicas"></div>
+					<div class="arrowdown">
+						<a data-scroll href="#portafolio"><div class="arrow-down"></div></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- ******** ESTE CONTENIDO SOLO SE VISUALIZARA SI EL WIDTH DE LA PANTALLA ES MAYOR A 575 ******** -->
+
+			<div screen-size>
+				<div data-ng-if="width > 575">
+					<div class="contenido-info">
+						<div class="arrowup" style="height: 2.5vh;">
+							<a data-scroll href="#aboutme">
+								<div class="arrow-up" style="font-size: 1.4em;"></div>
+							</a>
+						</div>
+						
+						<div class="back-front">
+							<div class="back-end">
+								<div class="tittle" style="font-size: 1.4em;">
+									<p>BACK-END</p>
+								</div>
+								<div class="content-info-hab-tec">	
+									<div class="info-hab-back">
+										<div class="circle-img js1"></div>
+										<div class="circle-img js2"></div>
+										<div class="contenidoback">
+											<div class="barraporcentaje-backjs"></div>
+											<div class="porcentaje-backjs"><p><strong>80%</strong></p></div>
+										</div>
+									</div>
+									<div class="info-hab-back">
+										<div class="circle-img ruby1"></div>
+										<div class="circle-img ruby2"></div>
+										<div class="contenidoback">
+											<div class="barraporcentaje-backruby"></div>
+											<div class="porcentaje-backruby"><p><strong>40%</strong></p></div>
+										</div>
+									</div>
+									<div class="info-hab-back">
+										<div class="circle-img python1"></div>
+										<div class="circle-img python2"></div>
+										<div class="contenidoback">
+											<div class="barraporcentaje-backpython"></div>
+											<div class="porcentaje-backpython"><p><strong>60%</strong></p></div>
+										</div>
+									</div>
+									<div class="mas-info-backend">
+										<p>¡Dale click a las imágenes para ver más información!</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="front-end">
+								<div class="tittle" style="font-size: 1.4em;">
+									<p>FRONT-END</p>
+								</div>
+								<div class="content-info-hab-tec">
+									<div class="info-hab-front">
+										<div class="tittle-frontend">
+											<p><strong>¡Algunos Frameworks y herramientas con los que trabajo!</strong></p>
+										</div>
+										<a target="_blank" href="https://angular.io/"><div class="img-front angular"></div></a>
+										<a target="_blank" href="https://ionicframework.com/"><div class="img-front ionic"></div></a>
+										<a target="_blank" href="http://yeoman.io/"><div class="img-front yeoman"></div></a>
+										<a target="_blank" href="https://gruntjs.com/"><div class="img-front grunt"></div></a>
+										<a target="_blank" href="https://bower.io/"><div class="img-front bower"></div></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="conocimientos">
+							<div class="tittle" style="font-size: 1.4em;">
+								<p>ALGUNOS CONOCIMIENTOS DEL MUNDO WEB</p>
+							</div>
+							<div class="content-info-hab-tec">
+								<div class="info-hab-conocimientos">
+									<div class="tittle-conocimiento-desingweb">
+										<p><strong>Diseño Web</strong></p>
+									</div>
+									<div class="contenido-conocimiento-designweb">
+										<p>Algunos conocimientos que he adquirido e incorporado a mi metodología de trabajo considerándolos fundamentales en la creación de productos para la internet son:<br>
+										Una correcta maquetación en <a target="_blank" href="https://www.w3schools.com/html/html5_intro.asp">HTML5</a> y <a target="_blank" href="https://www.w3schools.com/css/css3_intro.asp">CSS3</a>, respetando los principios de Mobile First y Responsive Web Design. Añadir sutiles animaciones con <a target="_blank" href="https://www.javascript.com/">Javascript</a> (Utilizando CSS3 o algún que otro Framework), acorde a la tendencia de efectos y diseño. <br>Además algo que considero fundamental y lo aplico desde el día que supe de ello, son las <a target="_blank" href="https://es.wikipedia.org/wiki/Posicionamiento_en_buscadores">¡Técnicas de posicionamiento SEO!</a><br></p>
+									</div>
+									<div class="tittle-conocimiento-desingweb">
+										<p><strong>Fundamentación de Programación - FrontEnd</strong></p>
+									</div>
+									<div class="contenido-conocimiento-designweb">
+										<p>Para una correcta comprensión de los Frameworks de la actualidad, he realizado diversos cursos y poseo conocimientos en bases fundamentales de <a target="_blank" href="https://www.javascript.com/">JavaScript</a>, <a target="_blank" href="http://es6-features.org/#Constants">ECMAScript 6</a> y <a target="_blank" href="https://www.typescriptlang.org/">TypeScript</a>.</p>
+									</div>
+									<div class="tittle-conocimiento-desingweb">
+										<p><strong>Persistencia</strong></p>
+									</div>
+									<div class="contenido-conocimiento-designweb">
+										<p>Tengo experiencia con Bases de Datos SQL y NoSQL. Experiencia académica con <a target="_blank" href="https://www.mysql.com/">MySQL</a>, y experiencia laboral con <a target="_blank" href="https://es.wikipedia.org/wiki/PL/SQL">PL/SQL</a>. (Puedes ver <a target="_blank" href="">Mí Currículum</a> para más información). En cuanto a NoSQL, he utilizado frecuentemente (trabajando con el Stack MEAN), <a target="_blank" href="https://www.mongodb.com/">MongoDB</a> con <a target="_blank" href="http://mongoosejs.com/">Mongoose</a>.</p>
+									</div>
+								</div>
+							</div>
+						</div>	
+						<div class="arrowdown">
+							<a data-scroll href="#portafolio">
+								<div class="arrow-down" style="font-size: 1.4em;"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ************************************************ SECCIÓN PORTAFOLIO ********************************************* -->
+
+	<section class="info">
+		<div class="content-info content-info-portafolio">
+			<div class="info-portafolio"> 
+				<h3 id="portafolio">Portafolio</h3>
+			</div>
+			
+			<div data-ng-if="width <= 575">
+				<div class="arrowup" style="height: 2.5vh;">
+					<a data-scroll href="#habpersonales">
+						<div class="arrow-up"></div>
+					</a>
+				</div>
+			</div>
+
+			<div data-ng-if="width > 575">
+				<div class="arrowup" style="height: 2.5vh;">
+					<a data-scroll href="#habpersonales">
+						<div class="arrow-up" style="font-size: 1.4em;"></div>
+					</a>
+				</div>
+			</div>
+
+			<div class="portafolio">
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+
+				<a target="_blank" href="https://joniaguero.github.io/webpaintball/">
+					<div class="box">
+						<div class="front-box" style="background-image: url('img/portafolio/paintball.png');"></div>
+						<div class="back-box">
+							<p class="tittle-image">Paintball</p>
+							<p class="contenido-image">Responsive Design. Web ficticia</p>
+						</div>
+					</div>
+				</a>
+				
+			</div>
+
+			<div class="arrowdown">
+				
+			</div>
+				
+	</section>
+		
+	<!-- ********************************************* BOTON PARA CONTACTO ***********************************************-->
+	<div class="icon-contact" data-ng-click="desplegarContacto()"></div>
+
+	<!-- ********************************************* MENU DE CONTACTO ***********************************************-->
+	<div class="menu-contact" data-ng-show="contactActive">
+		<div class="image-menu-contact"></div>
+		<div class="cerrar-menu-contact" data-ng-click="desplegarContacto()"></div>
+	 	<p class="saludo-contact"><strong>¡Hola!</strong></p>
+		<p class="info-contact">Para contactar conmigo me puedes enviar un Email a: <a href="javascript:void(window.open('https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&shva=1&to=aguerojonathanivan@gmail.com'));">aguerojonathanivan@gmail.com</a></p>
+		<a target="_blank" href="https://github.com/JoniAguero?tab=repositories" style="color: black;"><div class="contact-git"></div></a>
+		<p class="info-contact">¡Echa un vistazo a mis proyectos en Github <a target="_blank" href="https://github.com/JoniAguero?tab=repositories">@JoniAguero</a>!</p>
+		<a target="_blank" href="https://docs.google.com/document/d/15tj75adM7aixRA7w2fNKW_HQNWJokvaXf5Tv4NExfOo/edit?usp=sharing" style="color: black;"><div class="contact-gdrive"></div></a>
+		<p class="info-contact">¡Mira los <a target="_blank" href="https://docs.google.com/document/d/15tj75adM7aixRA7w2fNKW_HQNWJokvaXf5Tv4NExfOo/edit">cursos</a> de Back-End y Front-End que he realizado!</p>
+		<p class="info-contact cv">Para ver más información puedes ver <a target="_blank" href="">Mí Currículum</a>.</p>
+	</div>
+
+	<!-- ************************************************ FOOTER ********************************************************-->
+
+	<footer>
+		<div class="info-rrss">
+			<a target="_blank" href="https://www.facebook.com/joni.aguero.39"></a>
+			<a target="_blank" href="https://www.linkedin.com/in/jonathan-aguero-256648137/"></a>
+			<a target="_blank" href="https://github.com/JoniAguero"></a>
+		</div>
+		<p>Ⓒ 2017 All rights reserved | Privacity Policy</p>
+	</footer>
+
+
+
+	<!-- ***************************************************************** CARA INTERACTIVA ***************************************************************** -->
+
+<!-- 	<section class="cara-animada">
+		<div class="content-cara-animada">
+			<me>
+			  <hair></hair>
+			  <ears></ears>
+			  <neck></neck>
+			  <face></face>
+			  <goatee></goatee>
+			  <eyebrows></eyebrows>
+			  <mouth></mouth>
+			  <eyes-and-nose></eyes-and-nose>
+			</me>
+		</div>
+	</section> -->
+	
+	<!-- *********************************************** ANIMACION PARTICULAS ***************************************** -->
+	<script src="js/particles.js"></script>
+	<script src="js/app-particles.js"></script>
+</body>
+</html>
