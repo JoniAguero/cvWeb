@@ -1238,6 +1238,11 @@ footer .info-rrss a:nth-child(3):before{
 	-webkit-animation: shine 4s infinite linear;
 	animation: shine 4s infinite linear;
 }
+@-moz-keyframes{
+	100% {
+		left: 70%;
+	}
+}
 @-webkit-keyframes shine {
 
 	100% {
@@ -1335,7 +1340,9 @@ footer .info-rrss a:nth-child(3):before{
 	background-repeat: no-repeat;
 }
 .back-box{
-
+	
+	-webkit-transform: rotateY(90deg) translateX(100px);
+	-moz-transform: rotateY(90deg) translateX(100px);
 	transform: rotateY(90deg) translateX(100px);
 	left: 100px;
 	background-color: white;
@@ -1343,6 +1350,8 @@ footer .info-rrss a:nth-child(3):before{
 
 .box:hover{
 
+	-moz-transform: perspective(800px) rotateY(-75deg);
+	-webkit-transform: perspective(800px) rotateY(-75deg);
 	transform: perspective(800px) rotateY(-75deg);
 	z-index: 1;
 }
