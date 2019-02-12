@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-	<script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"> </script>
+	<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-layout-component@3.x.x/dist/aframe-layout-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js">
+		</script>
 </head>
 
 <body>
-	<a-scene rain>
-		<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-		<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-		<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-		<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-		<a-sky color="black"></a-sky>
+	<a-scene>
+		<a-assets>
+			<audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+
+			<!-- Images. -->
+			<img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+			<img id="venue-thumb" src="img/venue.png">
+			<img id="mcity-thumb" src="img/mcity.png">
+			<img id="brastlewark-thumb" src="img/brastlewark.png">
+			<img id="linkedin" src="img/linkedin.png">
+			<img id="github" src="img/github.png">
+
+			<script id="plane" type="text/html">
+				<a-entity class="link"
+				link="href: ${link}"
+				geometry="primitive: plane; height: 1; width: 1"
+				material="shader: flat; src: ${thumb}"
+				sound="on: click; src: #click-sound"
+				event-set__1="_event: mousedown; scale: 1 1 1"
+				event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+				event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+				event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
+			</script>
+
+		</a-assets>
+
+		<!-- 360-degree image. -->
+		<a-sky id="image-360" radius="10" src="#city"></a-sky>
+
+		<!-- Link we will build. -->
+
+		<a-text value="Hello World, I'm Jonathan." scale="2 2 1" position="-4 3 -3"></a-text>
+		<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 50000">
+			<a-entity template="src: #plane" position="4 3 -5" data-thumb="#linkedin" data-link="https://www.linkedin.com/in/jonathan-aguero-256648137/"></a-entity>
+		</a-entity>
+		<a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 50000">
+			<a-entity template="src: #plane" position="-1 0 -4" data-thumb="#github" data-link="https://github.com/JoniAguero"></a-entity>
+		</a-entity>
+
+		<a-text value="I'm Developer, and these are some of my jobs." scale="2 2 1" position="-4 3 -5"></a-text>
+
+		<a-entity template="src: #plane" position="-3 1 -3" data-thumb="#venue-thumb" data-link="http://puzzling-wool.surge.sh/"></a-entity>
+		<a-entity template="src: #plane" position="0 1 -3" data-thumb="#mcity-thumb" data-link="https://m-city-ec908.firebaseapp.com/"></a-entity>
+		<a-entity template="src: #plane" position="3 1 -3" data-thumb="#brastlewark-thumb" data-link="https://joniaguero.github.io/brastlewark"></a-entity>
+
+		
+		<!-- Camera + Cursor. -->
+		<a-camera>
+			<a-cursor id="cursor">
+				<a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+				<a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+			</a-cursor>
+		</a-camera>
 	</a-scene>
 
 </body>
